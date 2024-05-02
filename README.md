@@ -36,6 +36,21 @@ GOOGLE_PROJECT_ID=""
 RESEND_API_KEY=""
 ```
 
+## Update where rows get written to
+
+```ts
+await sheets.spreadsheets.values.append({
+  spreadsheetId,
+  range: '[your sheet name]',
+  valueInputOption: 'USER_ENTERED',
+  requestBody: {
+    values: [[Email, Name, Company, Mobile_Phone, Message, Signup_Date]], // Data must be an array of arrays (each inner array represents a row)
+  },
+})
+```
+
+![Pic Thumbnail](public/google-setup/sheet.png)
+
 ## Local Setup
 
 1. `npm install`
